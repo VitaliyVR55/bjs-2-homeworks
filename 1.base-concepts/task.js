@@ -2,6 +2,7 @@
 function solveEquation(a, b, c) {
   const arr = [];
   const diskr = b * b - 4 * a * c;
+  
   if (diskr > 0) {
     const x1 = (-b + Math.sqrt(diskr)) / (2 * a);
     const x2 = (-b - Math.sqrt(diskr)) / (2 * a);
