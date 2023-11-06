@@ -10,8 +10,6 @@ function getArrayParams(...arr) {
   
   for (let i = 0; i < arr.length; i++) {  // операции фуекции
 
-    // sum += arr[i];
-
     if (arr[i] < min) {                    // определения мин. значения
       min = arr[i];
     }
@@ -50,21 +48,21 @@ function differenceMaxMinWorker(...arr) {     // Функция разницы �
     return 0;
   }
   
-  let min = 0;
-  let max = null;
-  let diff = null;
+  let min = Infinity;
+  let max = -Infinity;
+  let diff = 0;
   
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] < min) {
       min = arr[i];
-    }    
+    } 
     if (arr[i] > max) {
       max = arr[i];
-    }    
-    diff = max - min;
-    
-    return diff;
-  }
+    }  
+  }  
+
+  diff = max - min;
+  return diff;   
 }
 
 function differenceEvenOddWorker(...arr) {    // функция разницы четных и нечетных значений
@@ -82,7 +80,7 @@ function differenceEvenOddWorker(...arr) {    // функция разницы �
       sumOddElement += arr[i];
     }
   }
-    return sumEvenElement - sumOddElement;
+    return (sumEvenElement - sumOddElement);
 }
 
 function averageEvenElementsWorker(...arr) {     // функция сред. арифмет. четных значений
@@ -92,7 +90,7 @@ function averageEvenElementsWorker(...arr) {     // функция сред. а�
   
   let sumEvenElement = 0;
   let countEvenElement = 0;
-  let avgEvenElement = null;
+ // let avgEvenElement = null;
   
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 2 === 0) {
@@ -101,7 +99,7 @@ function averageEvenElementsWorker(...arr) {     // функция сред. а�
     } 
   }
 
-  avgEvenElement = sumEvenElement / countEvenElement;
+  let avgEvenElement = +(sumEvenElement / countEvenElement).toFixed(2);
   return avgEvenElement;
 }
 
@@ -121,8 +119,4 @@ function makeWork (arrOfArr, func) {
   }
   return maxWorkerResult;
 
-  let arrOfArr = [[10, 10, 11, 20, 10], [67, 10, 2, 39, 88], [72, 75, 51, 87, 43], [30, 41, 55, 96, 62]];
-  let func = summElementsWorker;
-  let result = makeWork(arrOfArr, summElementsWorker);
-  console.log(result);
 }
