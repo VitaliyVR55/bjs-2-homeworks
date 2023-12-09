@@ -26,14 +26,14 @@ class AlarmClock {
     const hours = date.getHours();
     const minutes = date.getMinutes();
     return `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`; */ 
-    const date = new Date();                                                                     // Вариат 2
+    /* const date = new Date();                                                                     // Вариат 2
     const hours = String(date.getHours()).padStart(2, "0");
     const minutes = String(date.getMinutes()).padStart(2, "0");
-    return `${hours}:${minutes}`;
-    /* return new Date().toLocaleTimeString("ru-Ru", {                                           // Вариант 3
+    return `${hours}:${minutes}`; */
+    return new Date().toLocaleTimeString("ru-Ru", {                                           // Вариант 3
       hour: "2-digit",
       minute: "2-digit",
-    }); */
+    });
   } 
 
   start() {
