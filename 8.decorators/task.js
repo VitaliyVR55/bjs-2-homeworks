@@ -9,7 +9,7 @@ function cachingDecoratorNew(func) {
       
       let objectInCache = cache.find((item) => item.hash === hash);
       if (objectInCache) {
-        return "Из кeша: " + objectInCache.result;
+        return "Из кеша: " + objectInCache.result;
         // return `Из кeша: ${objectInCache.result}`;
       }
 
